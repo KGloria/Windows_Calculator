@@ -12,6 +12,12 @@ namespace Calculator
 {
     public partial class Form1 : Form
     {
+        float operand1;
+        float operand2;
+        float result;
+        char operat;
+        Boolean operatorFlag;
+
         public Form1()
         {
             InitializeComponent();
@@ -19,7 +25,10 @@ namespace Calculator
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            operatorFlag = false;
+            operand1 = 0;
+            operand2 = 0;
+            result = 0;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -32,6 +41,7 @@ namespace Calculator
             if (txtDisplay.Text.Length > 0)
             {
                 txtDisplay.Clear();
+                txtLog.Clear();
             }
         }
 
@@ -119,6 +129,63 @@ namespace Calculator
                     txtDisplay.Text = "-" + txtDisplay.Text;
                 }
             }
+        }
+
+        private void btnEquals_Click(object sender, EventArgs e)
+        {
+            if (operatorFlag)
+            {
+                operand2 = float.Parse(txtDisplay.Text);
+                operatorFlag = false;
+                result = operand1 + operand2;
+                txtLog.Text = txtLog.Text + txtDisplay.Text;
+                txtDisplay.Text = result.ToString();
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            operand1 = float.Parse(txtDisplay.Text);
+            operat = '+';
+            operatorFlag = true;
+            txtLog.Text = txtDisplay.Text + " + ";
+            txtDisplay.Clear();
+        }
+
+        private void btnMinus_Click(object sender, EventArgs e)
+        {
+            operand1 = float.Parse(txtDisplay.Text);
+            operat = '-';
+            operatorFlag = true;
+            txtLog.Text = txtDisplay.Text + " - ";
+            txtDisplay.Clear();
+        }
+
+        private void btnMultiply_Click(object sender, EventArgs e)
+        {
+            operand1 = float.Parse(txtDisplay.Text);
+            operat = '*';
+            operatorFlag = true;
+            txtLog.Text = txtDisplay.Text + " x ";
+            txtDisplay.Clear();
+        }
+
+        private void btnDivide_Click(object sender, EventArgs e)
+        {
+            operand1 = float.Parse(txtDisplay.Text);
+            operat = '/';
+            operatorFlag = true;
+            txtLog.Text = txtDisplay.Text + " ÷ ";
+            txtDisplay.Clear();
+        }
+
+        private void btnModulo_Click(object sender, EventArgs e)
+        {
+            operand1 = float.Parse(txtDisplay.Text);
+            operat = '%';
+            operatorFlag = true;
+            txtLog.Text = txtDisplay.Text + " % ";
+            txtDisplay.Clear();
         }
     }
 }

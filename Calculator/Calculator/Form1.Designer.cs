@@ -50,6 +50,7 @@
             this.btnSign = new System.Windows.Forms.Button();
             this.SumBackground = new System.Windows.Forms.PictureBox();
             this.txtDisplay = new System.Windows.Forms.TextBox();
+            this.txtLog = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.SumBackground)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,6 +65,7 @@
             this.btnModulo.TabIndex = 0;
             this.btnModulo.Text = "%";
             this.btnModulo.UseVisualStyleBackColor = false;
+            this.btnModulo.Click += new System.EventHandler(this.btnModulo_Click);
             // 
             // btnReset
             // 
@@ -102,6 +104,7 @@
             this.btnDivide.TabIndex = 3;
             this.btnDivide.Text = "÷";
             this.btnDivide.UseVisualStyleBackColor = false;
+            this.btnDivide.Click += new System.EventHandler(this.btnDivide_Click);
             // 
             // btnMultiply
             // 
@@ -114,6 +117,7 @@
             this.btnMultiply.TabIndex = 7;
             this.btnMultiply.Text = "x";
             this.btnMultiply.UseVisualStyleBackColor = false;
+            this.btnMultiply.Click += new System.EventHandler(this.btnMultiply_Click);
             // 
             // btn9
             // 
@@ -165,6 +169,7 @@
             this.btnMinus.TabIndex = 11;
             this.btnMinus.Text = "-";
             this.btnMinus.UseVisualStyleBackColor = false;
+            this.btnMinus.Click += new System.EventHandler(this.btnMinus_Click);
             // 
             // btn6
             // 
@@ -216,6 +221,7 @@
             this.btnAdd.TabIndex = 15;
             this.btnAdd.Text = "+";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btn3
             // 
@@ -267,6 +273,7 @@
             this.btnEquals.TabIndex = 19;
             this.btnEquals.Text = "=";
             this.btnEquals.UseVisualStyleBackColor = false;
+            this.btnEquals.Click += new System.EventHandler(this.btnEquals_Click);
             // 
             // btnDecimal
             // 
@@ -331,6 +338,18 @@
             this.txtDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtDisplay.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
+            // txtLog
+            // 
+            this.txtLog.BackColor = System.Drawing.Color.Gray;
+            this.txtLog.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLog.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.txtLog.Location = new System.Drawing.Point(25, 48);
+            this.txtLog.Name = "txtLog";
+            this.txtLog.Size = new System.Drawing.Size(357, 19);
+            this.txtLog.TabIndex = 22;
+            this.txtLog.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -338,6 +357,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(409, 611);
+            this.Controls.Add(this.txtLog);
             this.Controls.Add(this.txtDisplay);
             this.Controls.Add(this.SumBackground);
             this.Controls.Add(this.btnEquals);
@@ -393,6 +413,7 @@
         private System.Windows.Forms.Button btnSign;
         private System.Windows.Forms.PictureBox SumBackground;
         private System.Windows.Forms.TextBox txtDisplay;
+        private System.Windows.Forms.TextBox txtLog;
     }
 }
 
