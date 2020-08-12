@@ -38,11 +38,8 @@ namespace Calculator
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            if (txtDisplay.Text.Length > 0)
-            {
                 txtDisplay.Clear();
                 txtLog.Clear();
-            }
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -137,7 +134,29 @@ namespace Calculator
             {
                 operand2 = float.Parse(txtDisplay.Text);
                 operatorFlag = false;
-                result = operand1 + operand2;
+
+                switch (operat)
+                {
+                    case '+':
+                        result = operand1 + operand2;
+                        break;
+                    case '-':
+                        result = operand1 - operand2;
+                        break;
+                    case '*':
+                        result = operand1 * operand2;
+                        break;
+                    case '/':
+                        result = operand1 / operand2;
+                        break;
+                    case '%':
+                        result = operand1 % operand2;
+                        break;
+                    default:
+                        Console.WriteLine("Default case");
+                        break;
+                }
+
                 txtLog.Text = txtLog.Text + txtDisplay.Text;
                 txtDisplay.Text = result.ToString();
             }
